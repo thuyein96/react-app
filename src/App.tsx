@@ -1,8 +1,15 @@
-import ListGroup from "./components/ListGroup";
+import { useState } from "react";
+import Button from "./components/Button";
+import Alert from "./components/Alert";
 
 function App() {
-  
-  return <div><ListGroup /></div>
+  const [alertVisible, setAlertVisibility] = useState(false);
+  return <div>
+    { alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
+    <Button onClick={() => setAlertVisibility(true)}>
+      Click Me
+    </Button>
+  </div>
 }
 
 
